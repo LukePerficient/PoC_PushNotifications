@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,89 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ead-7O-Rvq">
+                                <rect key="frame" x="16" y="69" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v6-hf-73M">
+                                <rect key="frame" x="73" y="294" width="71" height="30"/>
+                                <state key="normal" title="Enable PN"/>
+                                <connections>
+                                    <action selector="enablePushNotifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAQ-rI-r3d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jh0-Ag-8Gj">
+                                <rect key="frame" x="232" y="294" width="75" height="30"/>
+                                <state key="normal" title="Disable PN"/>
+                                <connections>
+                                    <action selector="disablePushNotifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hS-Ry-gMy"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8f-OZ-Xdb">
+                                <rect key="frame" x="213" y="174" width="105" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Time Interval: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfu-nU-C64">
+                                <rect key="frame" x="30" y="177" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k6g-wY-S5I">
+                                <rect key="frame" x="213" y="236" width="105" height="29"/>
+                                <segments>
+                                    <segment title="Yes"/>
+                                    <segment title="No"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeats?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUd-Qu-5jb">
+                                <rect key="frame" x="121" y="240" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R8f-OZ-Xdb" firstAttribute="leading" secondItem="rfu-nU-C64" secondAttribute="trailing" constant="21" id="1LV-Sk-dzw"/>
+                            <constraint firstItem="nUd-Qu-5jb" firstAttribute="top" secondItem="rfu-nU-C64" secondAttribute="bottom" constant="42" id="2YI-2M-E9C"/>
+                            <constraint firstItem="9v6-hf-73M" firstAttribute="top" secondItem="nUd-Qu-5jb" secondAttribute="bottom" constant="33" id="5sL-3R-zPm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jh0-Ag-8Gj" secondAttribute="trailing" constant="68" id="CFQ-IQ-2xg"/>
+                            <constraint firstItem="ead-7O-Rvq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="Mnl-OD-eUl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k6g-wY-S5I" secondAttribute="trailing" constant="57" id="SAS-Rg-v2o"/>
+                            <constraint firstItem="nUd-Qu-5jb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="U5c-j8-avf"/>
+                            <constraint firstItem="k6g-wY-S5I" firstAttribute="top" secondItem="R8f-OZ-Xdb" secondAttribute="bottom" constant="32" id="XCP-sk-5pS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ead-7O-Rvq" secondAttribute="trailing" constant="16" id="bZS-Gy-vGq"/>
+                            <constraint firstItem="Jh0-Ag-8Gj" firstAttribute="leading" secondItem="9v6-hf-73M" secondAttribute="trailing" constant="88" id="e6j-d8-WGM"/>
+                            <constraint firstItem="rfu-nU-C64" firstAttribute="top" secondItem="ead-7O-Rvq" secondAttribute="bottom" constant="87" id="eru-Xx-CfM"/>
+                            <constraint firstItem="ead-7O-Rvq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ew9-zv-S4s"/>
+                            <constraint firstItem="9v6-hf-73M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="f3C-uw-azW"/>
+                            <constraint firstItem="R8f-OZ-Xdb" firstAttribute="top" secondItem="ead-7O-Rvq" secondAttribute="bottom" constant="84" id="k31-vA-Oh2"/>
+                            <constraint firstItem="k6g-wY-S5I" firstAttribute="leading" secondItem="nUd-Qu-5jb" secondAttribute="trailing" constant="21" id="nKJ-Fj-rBO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R8f-OZ-Xdb" secondAttribute="trailing" constant="57" id="p2o-nl-vKx"/>
+                            <constraint firstItem="Jh0-Ag-8Gj" firstAttribute="top" secondItem="k6g-wY-S5I" secondAttribute="bottom" constant="30" id="s9S-Du-NB5"/>
+                            <constraint firstItem="rfu-nU-C64" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="thF-6w-rFE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="ead-7O-Rvq" id="0QX-B4-dja"/>
+                        <outlet property="repeatNotificationsSC" destination="k6g-wY-S5I" id="r6a-Mf-M9Y"/>
+                        <outlet property="timeIntervalTextField" destination="R8f-OZ-Xdb" id="tfj-c0-rHx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>

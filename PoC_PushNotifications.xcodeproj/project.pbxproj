@@ -40,6 +40,7 @@
 		444757F41F82849500AC4C01 /* PoC_PushNotificationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoC_PushNotificationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		444757F81F82849500AC4C01 /* PoC_PushNotificationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoC_PushNotificationsTests.m; sourceTree = "<group>"; };
 		444757FA1F82849500AC4C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		444758031F82857500AC4C01 /* PoC_PushNotifications.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoC_PushNotifications.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		444757DE1F82849500AC4C01 /* PoC_PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
+				444758031F82857500AC4C01 /* PoC_PushNotifications.entitlements */,
 				444757DF1F82849500AC4C01 /* AppDelegate.h */,
 				444757E01F82849500AC4C01 /* AppDelegate.m */,
 				444757E21F82849500AC4C01 /* ViewController.h */,
@@ -153,6 +155,11 @@
 					444757DB1F82849500AC4C01 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					444757F31F82849500AC4C01 = {
 						CreatedOnToolsVersion = 9.0;
@@ -357,7 +364,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PoC_PushNotifications/PoC_PushNotifications.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S4845553U;
 				INFOPLIST_FILE = PoC_PushNotifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Perficient.PoC-PushNotifications";
@@ -370,7 +379,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PoC_PushNotifications/PoC_PushNotifications.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5S4845553U;
 				INFOPLIST_FILE = PoC_PushNotifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Perficient.PoC-PushNotifications";
